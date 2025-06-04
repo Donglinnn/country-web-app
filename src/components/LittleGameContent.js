@@ -99,7 +99,7 @@ const LittleGameContent = () => {
         <div className="selectButton">
           <button
             onClick={() => {
-              if (!selectedGame) setSelectedGame("guessFlag");
+              if (selectedGame !== "guessFlag") setSelectedGame("guessFlag");
               else setSelectedGame(null);
             }}
           >
@@ -107,7 +107,8 @@ const LittleGameContent = () => {
           </button>
           <button
             onClick={() => {
-              if (!selectedGame) setSelectedGame("guessCapital");
+              if (selectedGame !== "guessCapital")
+                setSelectedGame("guessCapital");
               else setSelectedGame(null);
             }}
           >
