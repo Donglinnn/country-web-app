@@ -1,0 +1,344 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  background-image: url(../images/bg4.jpg);
+  background-size: auto;
+  background-repeat: repeat;
+}
+
+nav {
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  /* background: linear-gradient(90deg, #00896c, #91ad70); */
+  background-color: rgba(128, 128, 128, 0.1);
+  /* background-color: transparent; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav.transparent {
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+nav.solid {
+  background-color: rgba(0, 0, 0, 1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+#logoimg {
+  width: 40%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+nav img {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+
+nav ul {
+  width: 30%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  width: 6em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+nav ul a {
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+}
+
+nav ul a:visited {
+  color: white;
+}
+
+nav ul a:hover {
+  color: aquamarine;
+}
+
+nav ul li:hover {
+  transform: scale(1.1);
+}
+
+.undernav {
+  width: 100%;
+  height: 10vh;
+}
+
+.mainArea {
+  display: flex;
+}
+
+.selectButton {
+  width: 20%;
+  height: 10vh;
+  margin: 0 auto;
+  align-content: center;
+  text-align: center;
+  /* display: flex; */
+}
+
+.selectButton button {
+  cursor: pointer;
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  margin: 20% auto;
+  display: block;
+}
+
+.countryButton,
+.gameButton {
+  width: 80%;
+  margin: 0 auto 6vh;
+  align-content: center;
+  /* text-align: center; */
+}
+
+.countryButton p,
+gameButton p {
+  text-align: center;
+  align-content: center;
+  color: white;
+  font-size: 48px;
+}
+
+.countryButton button,
+.gameButton button {
+  background-color: azure;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  margin: 2% 2%;
+  transition: all 0.3s;
+}
+
+.countryButton button:hover,
+.gameButton button:hover {
+  transform: scale(1.2);
+}
+
+.gameArea {
+  width: 70%;
+  height: 70vh;
+  border-radius: 8px;
+  background: radial-gradient(#0089a7, #9198e5);
+  margin: 2% auto;
+  text-align: center;
+  align-content: center;
+}
+
+.gameArea h1 {
+  margin: 4vh 0;
+  font-size: 40px;
+}
+
+.gameArea h2 {
+  margin: 4vh 0;
+  font-size: 32px;
+}
+
+.gameArea img {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* 半透明黑色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99; /* 確保在最上層 */
+}
+
+.countryInfo {
+  width: 60%;
+  height: 70%;
+  /* background-color: #0089a7; */
+  background: radial-gradient(#0089a7, #9198e5);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countryContent {
+  width: 100%;
+}
+
+.arrowBtn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  color: white;
+}
+
+.arrowBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.arrowBtn.left {
+  left: 2%;
+}
+
+.arrowBtn.right {
+  right: 2%;
+}
+
+.countryInfo h2 {
+  font-size: 48px;
+  text-align: center;
+  align-content: center;
+  margin-top: -5%;
+  margin-bottom: 5%;
+}
+
+.countryInfo .cardDivisor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countryInfo .cardDivisor .cardLeft {
+  width: 40%;
+  height: 100%;
+  /* background-color: #255252; */
+}
+
+.cardLeft img {
+  width: 320px;
+}
+
+.cardLeft {
+  text-align: center;
+  align-content: center;
+}
+
+.cardRight {
+  text-align: start;
+  align-content: center;
+  font-size: 36px;
+  line-height: 4rem;
+}
+
+.countryInfo .cardDivisor .cardRight {
+  width: 50%;
+  right: 5%;
+  height: 100%;
+  /* background-color: #322253; */
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.4s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.4s ease-out;
+}
+
+#nomatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+#copyright {
+  background: #000;
+  width: 100%;
+  height: 6vh;
+  color: white;
+  text-align: center;
+  align-content: center;
+  font-size: 18px;
+  position: fixed;
+  bottom: 0;
+}
+
+/* 手機 */
+@media screen and (max-width: 768px) {
+  .countryInfo {
+    width: 90%;
+  }
+
+  .cardDivisor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardLeft,
+  .cardRight {
+    width: 100%;
+  }
+
+  .cardLeft img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
