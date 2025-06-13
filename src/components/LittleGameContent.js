@@ -9,7 +9,7 @@ const LittleGameContent = () => {
   const [answer, setAnswer] = useState(null); // 紀錄正確答案
   const [options, setOptions] = useState([]); // 紀錄題目的選項
   const [selected, setSelected] = useState(null); // 紀錄使用者所選之選項
-  const [feedback, setFeedback] = useState(""); //
+  const [feedback, setFeedback] = useState(""); // 根據使用者答對與否顯示相應的提示字
 
   useEffect(() => {
     const fetchData = async () => {
@@ -114,7 +114,6 @@ const LittleGameContent = () => {
           >
             猜首都
           </button>
-          <button>猜國家</button>
         </div>
         <div className="gameButton">
           {selectedGame === "guessFlag" && (

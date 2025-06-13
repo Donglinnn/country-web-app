@@ -13,7 +13,7 @@ const Nav = () => {
           <Link to="/">首頁</Link>
         </li>
         <li>
-          <Link to="/about">關於我</Link>
+          <Link to="/about">關於</Link>
         </li>
         <li>
           <Link to="/littlegame">小遊戲</Link>
